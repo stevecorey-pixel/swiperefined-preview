@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SwipeRefined — Prompt improvement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="kit.css" />
+<style>
+  .hl-amber{background:rgba(231,163,62,.22);border-radius:5px;padding:1px 5px}
+  .hl-coral{background:rgba(242,107,91,.18);border-radius:5px;padding:1px 5px}
+  .hl-teal{background:rgba(31,111,104,.15);border-radius:5px;padding:1px 5px}
+
+  .prompts-hero{padding:72px 0 48px;position:relative;overflow:hidden}
+  .blob-coral{position:absolute;width:500px;height:500px;border-radius:50%;
+    filter:blur(80px);opacity:.4;background:radial-gradient(circle,rgba(242,107,91,.5),transparent 70%);
+    top:-200px;right:-120px;z-index:0;pointer-events:none}
+  .blob-teal{position:absolute;width:360px;height:360px;border-radius:50%;
+    filter:blur:72px;opacity:.3;background:radial-gradient(circle,rgba(31,111,104,.4),transparent 70%);
+    bottom:-140px;left:-80px;z-index:0;pointer-events:none}
+
+  .prompts-stack{display:flex;flex-direction:column;gap:28px;position:relative;z-index:2}
+
+  /* Prompt card internals */
+  .prompt-question{
+    display:inline-block;font-family:'Manrope',sans-serif;font-weight:700;font-size:18px;
+    color:var(--charcoal);margin-bottom:20px;
+    border-left:3px solid var(--coral);padding-left:12px
+  }
+  .block-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gray);margin-bottom:6px}
+  .block-text{font-size:15.5px;line-height:1.7;color:var(--charcoal)}
+
+  .prompt-block{margin-bottom:16px}
+
+  .block-improved{
+    background:rgba(31,111,104,.06);border:1px solid rgba(31,111,104,.18);
+    border-radius:var(--r-sm);padding:14px 16px;margin-bottom:16px
+  }
+  .block-improved .block-label{color:var(--teal)}
+  .block-improved .block-text{font-size:16px}
+
+  .block-why{
+    background:rgba(79,157,105,.08);border:1px solid rgba(79,157,105,.18);
+    border-radius:var(--r-sm);padding:12px 16px
+  }
+  .block-why .block-label{color:var(--green)}
+
+  .card-action{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+
+  .sec-prompts{padding-bottom:80px}
+</style>
+</head>
+<body>
+
+<nav class="sr-nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="01-landing-refined.html" class="logo">
+        <span class="mark">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8h8M8 4l4 4-4 4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="swipe">Swipe</span><span class="refined">Refined</span>
+      </a>
+      <div class="nav-links">
+        <a href="#">How it works</a>
+        <a href="#">Examples</a>
+        <a href="#" class="btn btn-primary btn-sm">Try free</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="prompts-hero">
+  <div class="blob-coral"></div>
+  <div class="blob-teal"></div>
+  <div class="wrap">
+    <div class="sec-head reveal stagger" style="--i:0">
+      <div class="kick">Prompt coach</div>
+      <h1>Make your prompts easier to respond to</h1>
+      <p>Generic answers close conversations before they start. A little specificity opens them wide.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec-prompts">
+  <div class="wrap">
+    <div class="prompts-stack stagger">
+
+      <!-- Card 1 -->
+      <div class="card card-hover reveal" style="--i:1">
+        <div class="prompt-question">"A perfect Sunday…"</div>
+
+        <div class="prompt-block">
+          <div class="block-label">Current</div>
+          <div class="block-text"><span class="hl-amber">Relaxing and watching Netflix.</span></div>
+        </div>
+
+        <div class="prompt-block">
+          <span class="pill warn" style="margin-bottom:8px;display:inline-flex">Issue</span>
+          <div class="block-text" style="color:var(--gray);font-size:14.5px">Too generic; hard to start a conversation.</div>
+        </div>
+
+        <div class="block-improved">
+          <div class="block-label">Improved</div>
+          <div class="block-text">
+            <span class="hl-teal">Slow coffee</span>, a walk somewhere green,
+            <span class="hl-coral">one errand I pretended I'd do yesterday</span>, and ending with
+            <span class="hl-teal">takeout from a place I'll insist is underrated</span>.
+          </div>
+        </div>
+
+        <div class="block-why">
+          <span class="pill good" style="margin-bottom:8px;display:inline-flex">Why it works</span>
+          <div class="block-text" style="font-size:14.5px">It gives someone multiple easy ways to reply.</div>
+        </div>
+
+        <div class="card-action">
+          <button class="btn btn-primary btn-sm">Use this</button>
+          <button class="btn btn-ghost btn-sm">More playful</button>
+          <button class="btn btn-ghost btn-sm">More confident</button>
+          <button class="btn btn-ghost btn-sm">More low-key</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card card-hover reveal" style="--i:2">
+        <div class="prompt-question">"I geek out on…"</div>
+
+        <div class="prompt-block">
+          <div class="block-label">Current</div>
+          <div class="block-text"><span class="hl-amber">Music.</span></div>
+        </div>
+
+        <div class="prompt-block">
+          <span class="pill warn" style="margin-bottom:8px;display:inline-flex">Issue</span>
+          <div class="block-text" style="color:var(--gray);font-size:14.5px">Too broad to be a conversation starter — nearly everyone likes music.</div>
+        </div>
+
+        <div class="block-improved">
+          <div class="block-label">Improved</div>
+          <div class="block-text">
+            <span class="hl-coral">Finding the one song on an album everyone skipped but should not have.</span>
+          </div>
+        </div>
+
+        <div class="block-why">
+          <span class="pill good" style="margin-bottom:8px;display:inline-flex">Why it works</span>
+          <div class="block-text" style="font-size:14.5px">Specific, playful, and invites a music conversation.</div>
+        </div>
+
+        <div class="card-action">
+          <button class="btn btn-primary btn-sm">Use this</button>
+          <button class="btn btn-ghost btn-sm">More playful</button>
+          <button class="btn btn-ghost btn-sm">More confident</button>
+          <button class="btn btn-ghost btn-sm">More low-key</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="sr-foot">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:32px 0;border-top:1px solid var(--border)">
+      <a href="01-landing-refined.html" class="logo" style="font-size:17px">
+        <span class="mark" style="width:24px;height:24px">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M4 8h8M8 4l4 4-4 4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="swipe">Swipe</span><span class="refined">Refined</span>
+      </a>
+      <p style="color:var(--gray);font-size:13px">© 2026 SwipeRefined. Made with care.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="kit.js" defer></script>
+</body>
+</html>

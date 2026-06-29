@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SwipeRefined — Analyze Your Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="kit.css" />
+<style>
+/* ── Page-specific styles ── */
+.upload-hero{padding:60px 0 48px;position:relative;overflow:hidden}
+.upload-blob-c{width:440px;height:440px;background:radial-gradient(circle,rgba(242,107,91,.32),transparent 70%);top:-180px;right:-100px;position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;pointer-events:none}
+.upload-blob-t{width:360px;height:360px;background:radial-gradient(circle,rgba(31,111,104,.22),transparent 70%);bottom:-160px;left:-100px;position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;pointer-events:none}
+
+/* Progress stepper */
+.stepper{display:flex;align-items:center;gap:0;margin-bottom:44px}
+.step-item{display:flex;align-items:center;gap:10px}
+.step-circle{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:'Manrope';font-weight:700;font-size:14px;flex-shrink:0;transition:background .25s,color .25s}
+.step-circle.active{background:var(--coral);color:#fff;box-shadow:0 4px 14px rgba(242,107,91,.35)}
+.step-circle.done{background:var(--green);color:#fff}
+.step-circle.upcoming{background:var(--sand);color:var(--gray)}
+.step-label{font-size:13px;font-weight:600;white-space:nowrap}
+.step-label.active{color:var(--charcoal)}
+.step-label.upcoming{color:var(--gray)}
+.step-connector{flex:1;height:2px;background:var(--border);min-width:24px;max-width:60px;margin:0 8px}
+@media(max-width:600px){.step-label{display:none}.step-connector{min-width:12px;max-width:28px}}
+
+/* Drop zone */
+.dropzone{border:2px dashed var(--border);border-radius:var(--r-lg);padding:48px 32px;text-align:center;
+  background:var(--card);transition:border-color .25s,background .25s;cursor:pointer;position:relative}
+.dropzone:hover,.dropzone:focus-within{border-color:var(--coral);background:rgba(242,107,91,.03)}
+.dropzone-icon{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,var(--blush),rgba(242,107,91,.12));
+  display:grid;place-items:center;margin:0 auto 18px}
+.dropzone h3{font-family:'Manrope';font-weight:700;font-size:19px;margin-bottom:8px}
+.dropzone p{color:var(--gray);font-size:14px;margin-bottom:22px}
+.dropzone .browse-link{color:var(--coral);font-weight:600;text-decoration:underline;cursor:pointer}
+.sample-thumbs{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.sample-thumbs img{width:60px;height:76px;object-fit:cover;border-radius:var(--r-sm);
+  border:2px solid var(--border);opacity:.7;transition:opacity .2s}
+.sample-thumbs img:hover{opacity:1}
+.dropzone-hint{margin-top:16px;font-size:12px;color:var(--gray)}
+
+/* Option cards grid */
+.options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+@media(max-width:600px){.options-grid{grid-template-columns:1fr}}
+.option-card{display:flex;align-items:flex-start;gap:16px;padding:22px}
+.option-card .icon-wrap{width:42px;height:42px;border-radius:12px;background:var(--sand);
+  display:grid;place-items:center;flex-shrink:0;transition:background .25s}
+.option-card:hover .icon-wrap{background:var(--blush)}
+.option-card h4{font-family:'Manrope';font-weight:700;font-size:15px;margin-bottom:4px}
+.option-card p{font-size:13px;color:var(--gray);line-height:1.45}
+
+/* Privacy card */
+.privacy-card{display:flex;align-items:flex-start;gap:14px;background:rgba(255,225,218,.35);
+  border:1px solid rgba(242,107,91,.18);border-radius:var(--r-md);padding:18px 20px;margin-top:20px}
+.privacy-card .icon{flex-shrink:0;color:var(--coral)}
+.privacy-card p{font-size:13.5px;color:#5c3028;line-height:1.5}
+
+/* CTA block */
+.cta-block{margin-top:36px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.cta-note{font-size:13px;color:var(--gray)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="sr-nav" id="sr-nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="01-landing-refined.html">
+      <span class="mark">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="3" stroke="#fff" stroke-width="2"/><path d="M9 16l1.5-3.5L14 11l-3.5-1.5L9 6l-1.5 3.5L4 11l3.5 1.5L9 16z" fill="#fff"/></svg>
+      </span>
+      <span><span class="swipe">Swipe</span><span class="refined">Refined</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="01-landing-refined.html#how">How it works</a>
+      <a href="01-landing-refined.html#examples">Examples</a>
+      <a href="01-landing-refined.html#pricing">Pricing</a>
+      <a href="#" class="signin">Sign in</a>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="upload-hero">
+  <span class="upload-blob-c"></span>
+  <span class="upload-blob-t"></span>
+  <div class="wrap" style="position:relative;z-index:2;max-width:780px">
+
+    <!-- Progress stepper -->
+    <div class="stepper stagger reveal" style="--i:0">
+      <div class="step-item">
+        <span class="step-circle active">1</span>
+        <span class="step-label active">Profile</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item">
+        <span class="step-circle upcoming">2</span>
+        <span class="step-label upcoming">Photos</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item">
+        <span class="step-circle upcoming">3</span>
+        <span class="step-label upcoming">Bio &amp; Prompts</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item">
+        <span class="step-circle upcoming">4</span>
+        <span class="step-label upcoming">Results</span>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="sec-head stagger" style="margin-bottom:32px;max-width:100%">
+      <p class="kick reveal" style="--i:1">Step 1 of 4</p>
+      <h1 class="reveal" style="font-size:clamp(26px,4vw,40px);font-family:'Manrope';font-weight:800;line-height:1.1;margin-bottom:12px;--i:2">Start with your current profile</h1>
+      <p class="reveal" style="font-size:17px;color:var(--gray);--i:3">Upload screenshots or paste your bio and prompts. We'll turn them into a clear improvement plan — no account required.</p>
+    </div>
+
+    <!-- Drop zone -->
+    <div class="dropzone reveal" tabindex="0" role="button" aria-label="Upload profile screenshots" style="--i:4">
+      <div class="dropzone-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/>
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+        </svg>
+      </div>
+      <h3>Drag screenshots here</h3>
+      <p>Drop your profile screenshots, or <span class="browse-link">browse to upload</span></p>
+      <div class="sample-thumbs">
+        <img src="assets/portrait-jordan.jpg" alt="Sample portrait" />
+        <img src="assets/portrait-maya.jpg" alt="Sample portrait" />
+        <img src="assets/portrait-alex.jpg" alt="Sample portrait" />
+      </div>
+      <p class="dropzone-hint">PNG, JPG, HEIC · up to 20 MB each</p>
+    </div>
+
+    <!-- Option cards -->
+    <div class="options-grid stagger">
+      <div class="card card-hover option-card reveal" style="--i:0">
+        <div class="icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Upload profile screenshots</h4>
+          <p>Capture your whole profile in a few screenshots and drop them here.</p>
+        </div>
+      </div>
+
+      <div class="card card-hover option-card reveal" style="--i:1">
+        <div class="icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Add photos</h4>
+          <p>Upload your individual photos so we can review quality, order, and variety.</p>
+        </div>
+      </div>
+
+      <div class="card card-hover option-card reveal" style="--i:2">
+        <div class="icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Paste bio</h4>
+          <p>Copy and paste your "About me" text. We'll flag what's working and what to sharpen.</p>
+        </div>
+      </div>
+
+      <div class="card card-hover option-card reveal" style="--i:3">
+        <div class="icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Add prompts</h4>
+          <p>Share your prompt questions and answers — we'll help you make them more magnetic.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy note -->
+    <div class="privacy-card reveal" style="--i:4">
+      <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <p>Your profile is only used to generate your recommendations. We don't store your photos or share your data with third parties.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block reveal" style="--i:5">
+      <a href="04-results-refined.html" class="btn btn-primary">
+        Analyze my profile
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="cta-note">Takes about 60 seconds · No account needed</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="sr-foot">
+  <div class="wrap">
+    <div class="foot-inner">
+      <a class="logo" href="01-landing-refined.html">
+        <span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="3" stroke="#fff" stroke-width="2"/><path d="M9 16l1.5-3.5L14 11l-3.5-1.5L9 6l-1.5 3.5L4 11l3.5 1.5L9 16z" fill="#fff"/></svg></span>
+        <span><span class="swipe">Swipe</span><span class="refined">Refined</span></span>
+      </a>
+      <div class="foot-links">
+        <a href="01-landing-refined.html#how">How it works</a>
+        <a href="01-landing-refined.html#examples">Examples</a>
+        <a href="01-landing-refined.html#pricing">Pricing</a>
+        <a href="#">Privacy</a>
+        <a href="#">Sign in</a>
+      </div>
+    </div>
+    <p class="foot-note" style="margin-top:20px;font-size:13px;color:var(--gray)">© 2026 SwipeRefined · Small changes. Better first impressions.</p>
+  </div>
+</footer>
+
+<script src="kit.js" defer></script>
+</body>
+</html>
