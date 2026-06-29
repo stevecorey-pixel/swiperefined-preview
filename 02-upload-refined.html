@@ -10,14 +10,14 @@
 <style>
 /* ── Page-specific styles ── */
 .upload-hero{padding:60px 0 48px;position:relative;overflow:hidden}
-.upload-blob-c{width:440px;height:440px;background:radial-gradient(circle,rgba(242,107,91,.32),transparent 70%);top:-180px;right:-100px;position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;pointer-events:none}
-.upload-blob-t{width:360px;height:360px;background:radial-gradient(circle,rgba(31,111,104,.22),transparent 70%);bottom:-160px;left:-100px;position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;pointer-events:none}
+.upload-blob-c{width:440px;height:440px;background:radial-gradient(circle,rgba(91,46,145,.32),transparent 70%);top:-180px;right:-100px;position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;pointer-events:none}
+.upload-blob-t{width:360px;height:360px;background:radial-gradient(circle,rgba(62,140,132,.22),transparent 70%);bottom:-160px;left:-100px;position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;pointer-events:none}
 
 /* Progress stepper */
 .stepper{display:flex;align-items:center;gap:0;margin-bottom:44px}
 .step-item{display:flex;align-items:center;gap:10px}
 .step-circle{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:'Manrope';font-weight:700;font-size:14px;flex-shrink:0;transition:background .25s,color .25s}
-.step-circle.active{background:var(--coral);color:#fff;box-shadow:0 4px 14px rgba(242,107,91,.35)}
+.step-circle.active{background:var(--coral);color:#fff;box-shadow:0 4px 14px rgba(91,46,145,.35)}
 .step-circle.done{background:var(--green);color:#fff}
 .step-circle.upcoming{background:var(--sand);color:var(--gray)}
 .step-label{font-size:13px;font-weight:600;white-space:nowrap}
@@ -29,8 +29,8 @@
 /* Drop zone */
 .dropzone{border:2px dashed var(--border);border-radius:var(--r-lg);padding:48px 32px;text-align:center;
   background:var(--card);transition:border-color .25s,background .25s;cursor:pointer;position:relative}
-.dropzone:hover,.dropzone:focus-within{border-color:var(--coral);background:rgba(242,107,91,.03)}
-.dropzone-icon{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,var(--blush),rgba(242,107,91,.12));
+.dropzone:hover,.dropzone:focus-within{border-color:var(--coral);background:rgba(91,46,145,.03)}
+.dropzone-icon{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,var(--blush),rgba(91,46,145,.12));
   display:grid;place-items:center;margin:0 auto 18px}
 .dropzone h3{font-family:'Manrope';font-weight:700;font-size:19px;margin-bottom:8px}
 .dropzone p{color:var(--gray);font-size:14px;margin-bottom:22px}
@@ -52,8 +52,8 @@
 .option-card p{font-size:13px;color:var(--gray);line-height:1.45}
 
 /* Privacy card */
-.privacy-card{display:flex;align-items:flex-start;gap:14px;background:rgba(255,225,218,.35);
-  border:1px solid rgba(242,107,91,.18);border-radius:var(--r-md);padding:18px 20px;margin-top:20px}
+.privacy-card{display:flex;align-items:flex-start;gap:14px;background:rgba(252,232,239,.35);
+  border:1px solid rgba(91,46,145,.18);border-radius:var(--r-md);padding:18px 20px;margin-top:20px}
 .privacy-card .icon{flex-shrink:0;color:var(--coral)}
 .privacy-card p{font-size:13.5px;color:#5c3028;line-height:1.5}
 
