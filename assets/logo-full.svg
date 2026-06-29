@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 132" role="img" aria-label="SwipeRefined — Better profile. Better connections.">
+  <!-- icon mark -->
+  <g transform="translate(8,30)">
+    <rect x="17" y="10" width="25" height="31" rx="7" fill="#E86A92"/>
+    <path d="M13 6h15a7 7 0 0 1 7 7v15a7 7 0 0 1-7 7H16l-6 5 1.2-5H13a7 7 0 0 1-7-7V13a7 7 0 0 1 7-7z" fill="#5B2E91"/>
+    <circle cx="20.5" cy="17" r="4.2" fill="#fff"/>
+    <path d="M14 28c0-3.6 2.9-6.5 6.5-6.5S27 24.4 27 28z" fill="#fff"/>
+    <rect x="13.5" y="30.4" width="14" height="2.3" rx="1.15" fill="#fff"/>
+    <path d="M29 7.5l1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1z" fill="#fff"/>
+  </g>
+  <!-- wordmark -->
+  <text x="74" y="68" font-family="Manrope, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="-1">
+    <tspan fill="#5B2E91">Swipe</tspan><tspan fill="#E86A92">Refined</tspan>
+  </text>
+  <!-- tagline -->
+  <text x="76" y="96" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="#6F6A64">BETTER PROFILE. BETTER CONNECTIONS.</text>
+</svg>

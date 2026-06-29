@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="SwipeRefined">
+  <defs>
+    <radialGradient id="blush" cx="85%" cy="18%" r="42%"><stop offset="0" stop-color="#FCE8EF"/><stop offset="1" stop-color="#FCE8EF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="lav" cx="14%" cy="12%" r="34%"><stop offset="0" stop-color="#EFE5FA"/><stop offset="1" stop-color="#EFE5FA" stop-opacity="0"/></radialGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAF7F1"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#base)"/>
+  <rect width="1200" height="630" fill="url(#lav)"/>
+  <rect width="1200" height="630" fill="url(#blush)"/>
+  <!-- icon mark, scaled -->
+  <g transform="translate(150,205) scale(4.6)">
+    <rect x="17" y="10" width="25" height="31" rx="7" fill="#E86A92"/>
+    <path d="M13 6h15a7 7 0 0 1 7 7v15a7 7 0 0 1-7 7H16l-6 5 1.2-5H13a7 7 0 0 1-7-7V13a7 7 0 0 1 7-7z" fill="#5B2E91"/>
+    <circle cx="20.5" cy="17" r="4.2" fill="#fff"/>
+    <path d="M14 28c0-3.6 2.9-6.5 6.5-6.5S27 24.4 27 28z" fill="#fff"/>
+    <rect x="13.5" y="30.4" width="14" height="2.3" rx="1.15" fill="#fff"/>
+    <path d="M29 7.5l1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1z" fill="#fff"/>
+  </g>
+  <text x="410" y="300" font-family="Manrope, Arial, sans-serif" font-size="88" font-weight="800" letter-spacing="-2"><tspan fill="#5B2E91">Swipe</tspan><tspan fill="#E86A92">Refined</tspan></text>
+  <text x="414" y="356" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="600" letter-spacing="5" fill="#6F6A64">BETTER PROFILE. BETTER CONNECTIONS.</text>
+  <text x="414" y="420" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="400" fill="#17151F">Improve your dating profile without losing what makes you you.</text>
+</svg>

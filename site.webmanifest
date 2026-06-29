@@ -1,0 +1,12 @@
+{
+  "name": "SwipeRefined",
+  "short_name": "SwipeRefined",
+  "description": "Improve your dating profile without losing what makes you you.",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#5B2E91",
+  "background_color": "#FAF7F1",
+  "display": "standalone"
+}
