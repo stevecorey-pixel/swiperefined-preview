@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="SwipeRefined">
+  <!-- rose back card -->
+  <rect x="17" y="10" width="25" height="31" rx="7" fill="#E86A92"/>
+  <!-- plum chat bubble with tail -->
+  <path d="M13 6h15a7 7 0 0 1 7 7v15a7 7 0 0 1-7 7H16l-6 5 1.2-5H13a7 7 0 0 1-7-7V13a7 7 0 0 1 7-7z" fill="#5B2E91"/>
+  <!-- white profile silhouette -->
+  <circle cx="20.5" cy="17" r="4.2" fill="#FFFFFF"/>
+  <path d="M14 28c0-3.6 2.9-6.5 6.5-6.5S27 24.4 27 28z" fill="#FFFFFF"/>
+  <rect x="13.5" y="30.4" width="14" height="2.3" rx="1.15" fill="#FFFFFF"/>
+  <!-- sparkle -->
+  <path d="M29 7.5l1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1z" fill="#FFFFFF"/>
+</svg>

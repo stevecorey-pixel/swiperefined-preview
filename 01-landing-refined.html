@@ -54,9 +54,9 @@
   nav.scrolled{border-color:var(--border);box-shadow:var(--shadow-sm)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
   .logo{display:flex;align-items:center;gap:10px;font-family:'Manrope';font-weight:800;font-size:21px}
-  .logo .mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--coral),var(--blush));
-    display:grid;place-items:center;box-shadow:var(--shadow-sm)}
-  .logo .swipe{color:var(--charcoal)} .logo .refined{color:var(--coral)}
+  .logo .mark{width:34px;height:34px;background:url(assets/logo-mark.svg) center/contain no-repeat;display:grid;place-items:center}
+  .logo .mark svg{display:none}
+  .logo .swipe{color:var(--primary)} .logo .refined{color:var(--accent)}
   .nav-links{display:flex;align-items:center;gap:32px}
   .nav-links a:not(.btn){font-size:15px;color:var(--gray);font-weight:500;position:relative;transition:color .2s}
   .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--accent);transition:width .25s var(--ease)}
@@ -64,7 +64,7 @@
   @media(max-width:880px){.nav-links a:not(.btn):not(.signin){display:none}}
 
   /* ---------- Hero ---------- */
-  .hero{position:relative;padding:84px 0 96px;background:radial-gradient(circle at 85% 20%, #FCE8EF 0%, transparent 34%), linear-gradient(180deg, #FAF7F1 0%, #FFFFFF 100%)}
+  .hero{position:relative;padding:84px 0 96px;background:radial-gradient(circle at 85% 20%, #FCE8EF 0%, transparent 34%), radial-gradient(circle at 15% 10%, #EFE5FA 0%, transparent 28%), linear-gradient(180deg, #FAF7F1 0%, #FFFFFF 100%)}
   .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;pointer-events:none}
   .blob-1{width:520px;height:520px;background:radial-gradient(circle,rgba(91,46,145,.45),transparent 70%);top:-160px;right:-120px}
   .blob-2{width:440px;height:440px;background:radial-gradient(circle,rgba(62,140,132,.30),transparent 70%);bottom:-140px;left:-120px}
@@ -401,7 +401,7 @@
       <a class="logo" href="#"><span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="3" stroke="#fff" stroke-width="2"/><path d="M9 16l1.5-3.5L14 11l-3.5-1.5L9 6l-1.5 3.5L4 11l3.5 1.5L9 16z" fill="#fff"/></svg></span><span><span class="swipe">Swipe</span><span class="refined">Refined</span></span></a>
       <div class="foot-links"><a href="#how">How it works</a><a href="#examples">Examples</a><a href="#pricing">Pricing</a><a href="#">Privacy</a><a href="#">Sign in</a></div>
     </div>
-    <p class="foot-note">© 2026 SwipeRefined · Small changes. Better first impressions.</p>
+    <p class="foot-note">SwipeRefined · Better profile. Better connections. · © 2026</p>
   </div>
 </footer>
 
