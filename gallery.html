@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SwipeRefined — Design Preview</title>
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<meta name="theme-color" content="#5B2E91" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SwipeRefined — Better profile. Better connections." />
+<meta property="og:description" content="Improve your dating profile without losing what makes you you." />
+<meta property="og:image" content="https://www.swiperefined.com/assets/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="kit.css" />
+<style>
+  .hero-i{padding:72px 0 36px;position:relative}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .scard{display:flex;flex-direction:column;overflow:hidden;padding:0;text-decoration:none;color:inherit}
+  .scard .thumb{aspect-ratio:16/10;background:var(--sand);position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+  .scard iframe{position:absolute;top:0;left:0;width:200%;height:200%;transform:scale(.5);transform-origin:top left;border:0;pointer-events:none;background:var(--cream)}
+  .scard .meta{padding:16px 18px}
+  .scard .meta .n{font-family:'Manrope';font-weight:700;font-size:16px}
+  .scard .meta .d{font-size:13px;color:var(--gray);margin-top:2px}
+  .scard .open{margin-top:10px;font-size:13px;font-weight:600;color:var(--coral);display:inline-flex;align-items:center;gap:5px}
+</style>
+</head>
+<body>
+<nav class="sr-nav"><div class="wrap nav-inner">
+  <a class="logo" href="./"><span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="3" stroke="#fff" stroke-width="2"/><path d="M9 16l1.5-3.5L14 11l-3.5-1.5L9 6l-1.5 3.5L4 11l3.5 1.5L9 16z" fill="#fff"/></svg></span><span><span class="swipe">Swipe</span><span class="refined">Refined</span></span></a>
+  <div class="nav-links"><a href="01-landing-refined.html" class="btn btn-primary btn-sm">View landing page</a></div>
+</div></nav>
+
+<header class="hero-i wrap">
+  <span class="blob blob-coral" style="width:420px;height:420px;top:-140px;right:-100px"></span>
+  <div class="reveal"><span class="eyebrow"><span class="dot"></span>Design preview · v1</span></div>
+  <div class="sec-head" style="margin-top:18px">
+    <h1 class="reveal">SwipeRefined — screen set</h1>
+    <p class="reveal">A warm, trustworthy dating-profile improvement experience. Nine production-grade screens, fully responsive, sharing one design system. Click any screen to open it full-size.</p>
+  </div>
+</header>
+
+<main class="wrap" style="padding-bottom:64px">
+  <div class="grid stagger">
+    <!-- cards -->
+    <a class="scard card card-hover reveal" href="01-landing-refined.html"><div class="thumb"><iframe src="01-landing-refined.html" loading="lazy" title="Landing"></iframe></div><div class="meta"><div class="n">Landing page</div><div class="d">Hero, how-it-works, pricing</div><span class="open">Open →</span></div></a>
+    <a class="scard card card-hover reveal" href="02-upload-refined.html"><div class="thumb"><iframe src="02-upload-refined.html" loading="lazy" title="Upload"></iframe></div><div class="meta"><div class="n">Upload / Onboarding</div><div class="d">Screenshots, photos, bio, prompts</div><span class="open">Open →</span></div></a>
+    <a class="scard card card-hover reveal" href="03-loading-refined.html"><div class="thumb"><iframe src="03-loading-refined.html" loading="lazy" title="Loading"></iframe></div><div class="meta"><div class="n">Analysis loading</div><div class="d">Progress checklist + ring</div><span class="open">Open →</span></div></a>
+    <a class="scard card card-hover reveal" href="04-results-refined.html"><div class="thumb"><iframe src="04-results-refined.html" loading="lazy" title="Results"></iframe></div><div class="meta"><div class="n">Results dashboard</div><div class="d">Scores + recommendations</div><span class="open">Open →</span></div></a>
+    <a class="scard card card-hover reveal" href="05-photo-lineup-refined.html"><div class="thumb"><iframe src="05-photo-lineup-refined.html" loading="lazy" title="Photo lineup"></iframe></div><div class="meta"><div class="n">Photo lineup</div><div class="d">Per-photo scores + order</div><span class="open">Open →</span></div></a>
+    <a class="scard card card-hover reveal" href="06-bio-rewrite-refined.html"><div class="thumb"><iframe src="06-bio-rewrite-refined.html" loading="lazy" title="Bio rewrite"></iframe></div><div class="meta"><div class="n">Bio rewrite</div><div class="d">Current vs refined editor</div><span class="open">Open →</span></div></a>
+    <a class="scard card card-hover reveal" href="07-prompt-improvement-refined.html"><div class="thumb"><iframe src="07-prompt-improvement-refined.html" loading="lazy" title="Prompts"></iframe></div><div class="meta"><div class="n">Prompt improvement</div><div class="d">Current / issue / improved / why</div><span class="open">Open →</span></div></a>
+    <a class="scard card card-hover reveal" href="08-action-plan-refined.html"><div class="thumb"><iframe src="08-action-plan-refined.html" loading="lazy" title="Action plan"></iframe></div><div class="meta"><div class="n">Action plan</div><div class="d">Checklist + impact/effort</div><span class="open">Open →</span></div></a>
+    <a class="scard card card-hover reveal" href="09-pricing-refined.html"><div class="thumb"><iframe src="09-pricing-refined.html" loading="lazy" title="Pricing"></iframe></div><div class="meta"><div class="n">Pricing</div><div class="d">Free / Refresh / Premium</div><span class="open">Open →</span></div></a>
+  </div>
+</main>
+
+<footer class="sr-foot"><div class="wrap">
+  <p class="foot-note">SwipeRefined · Design preview · Keep your personality. Improve the presentation.</p>
+</div></footer>
+<script src="kit.js" defer></script>
+</body>
+</html>
